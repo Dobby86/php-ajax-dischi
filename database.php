@@ -72,7 +72,9 @@
             "year"=> "1987"
         ]
     ];
- header("content-Type: application/json");
- echo json_encode($database);
+    // questo si commenta se si usa il php
+    
+ // header("content-Type: application/json");
+ // echo json_encode($database);
 
  ?>

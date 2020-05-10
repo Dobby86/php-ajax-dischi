@@ -18,19 +18,37 @@
                 <img src="img/logo.png" alt="logo" />
             </div>
         </header>
+        <!-- includiamo php -->
+        <?php
+
+        include "database.php";
+
+         ?>
+
         <div class="cds-container container">
-        </div>
+            <!-- inseriamo il php nei div -->
 
-        <script id="entry-template" type="text/x-handlebars-template">
-            <div class="cd" data-genre="{{genre}}">
-                <img src="{{poster}}" alt="">
-                <h3>{{title}}</h3>
-                <span class="author">{{author}}</span>
-                <span class="year">{{year}}</span>
+            <?php
+            foreach ($database as $album) {
+                ?>
+
+            <div class="cd" >
+                <img src="<?php echo $album["poster"] ;?>" alt="">
+                <h3>"<?php echo $album["title"] ;?>"</h3>
+                <span class="author">"<?php echo $album["author"] ;?>"</span>
+                <span class="year">"<?php echo $album["year"] ;?>"</span>
             </div>
-          </script>
 
-        <script src="main.js" charset="utf-8"></script>
+            <?php  }?>
+
+        </div>
+        <!-- quando importiamo il php l'handlebars si commenta -->
+<!--
+        <script id="entry-template" type="text/x-handlebars-template"> -->
+
+          <!-- </script> -->
+
+        <!-- <script src="main.js" charset="utf-8"></script> -->
 
 
 
